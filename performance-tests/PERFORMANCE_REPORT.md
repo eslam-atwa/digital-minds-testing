@@ -55,6 +55,3 @@ The system shows **strong performance in response speed** but **poor reliability
 The high failure rate indicates that the system is not yet stable enough for production conditions.  
 Further review and testing will be required to validate improvements once stability issues are addressed.
 
----
-
-_This report summarizes the results of the performance test conducted using k6. All metrics and insights are based on the data recorded during the testing period._
