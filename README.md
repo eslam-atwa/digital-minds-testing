@@ -6,6 +6,7 @@ Comprehensive testing suite for the [Digital Minds website](https://digitall-min
 
 ```
 digital-minds-testing/
+├── manual_testing
 ├── automation_testing/    # Selenium automated tests
 │   ├── src/
 │   │   └── test/java/
