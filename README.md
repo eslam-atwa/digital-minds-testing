@@ -31,7 +31,7 @@ digital-minds-testing/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/eslam-atwa/digital-minds-testing.git
+git clone https://github.com/eslam-atwa/digital-minds-website-testing
 cd digital-minds-testing/automation_testing
 ```
 
@@ -52,7 +52,7 @@ After running tests, find detailed reports in:
 - **WebDriverManager 5.7.0** - Automatic driver management
 - **Maven** - Build & dependency management
 
-## 🔧 Configuration
+##  Configuration
 
 Tests use:
 - **Base URL**: `https://digitall-minds.com`
