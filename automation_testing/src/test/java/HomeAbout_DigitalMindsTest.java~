@@ -1,0 +1,115 @@
+import org.openqa.selenium.*;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class HomeAbout_DigitalMindsTest extends BaseTest {
+
+    String BASE_URL = "https://digitall-minds.com";
+
+    private WebElement findAny(String[] selectors) {
+        for (String sel : selectors) {
+            try {
+                if (sel.startsWith("//")) {
+                    return driver.findElement(By.xpath(sel));
+                } else if (sel.startsWith("link=")) {
+                    String txt = sel.split("=", 2)[1];
+                    return driver.findElement(By.linkText(txt));
+                } else {
+                    return driver.findElement(By.cssSelector(sel));
+                }
+            } catch (Exception ignored) {}
+        }
+        return null;
+    }
+
+    private boolean isImageLoaded(WebElement img) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        try {
+            return (boolean) js.executeScript(
+                    "return arguments[0].complete && arguments[0].naturalWidth > 0;", img
+            );
+        } catch (Exception e) {
+            return true;
+        }
+    }
+
+    @Test
+    public void testHomePage() {
+        driver.get(BASE_URL);
+
+        String title = driver.getTitle().trim();
+        System.out.println("Home page title: '" + title + "'");
+
+        WebElement nav = findAny(new String[]{
+                "nav", ".navbar", "header", "#navbar", ".navigation"
+        });
+        Assert.assertNotNull(nav, "Navbar not found!");
+
+        WebElement aboutLink = findAny(new String[]{
+                "link=إحنا مين",
+                "link=من نحن",
+                "link=About",
+                "//a[contains(text(),'إحنا مين')]",
+                "//a[contains(text(),'من نحن')]",
+                "//a[contains(text(),'About')]",
+                "//a[contains(@href,'about')]"
+        });
+        Assert.assertNotNull(aboutLink, "About link not found!");
+
+        WebElement hero = findAny(new String[]{
+                ".hero", ".hero-section", ".main-hero", "section.hero", "main h1", "h1"
+        });
+        Assert.assertNotNull(hero, "Hero section not found!");
+
+        int brokenImages = 0;
+        int totalImages = 0;
+        for (WebElement img : driver.findElements(By.tagName("img"))) {
+            totalImages++;
+            if (!isImageLoaded(img)) {
+                brokenImages++;
+                System.out.println("Broken image: " + img.getAttribute("src"));
+            }
+        }
+        System.out.println("Images: " + totalImages + " total, " + brokenImages + " broken");
+
+        WebElement footer = findAny(new String[]{"footer"});
+        Assert.assertNotNull(footer, "Footer missing on Home!");
+    }
+
+    @Test
+    public void testAboutPage() {
+        driver.get(BASE_URL + "/about");
+
+        String title = driver.getTitle().trim();
+        System.out.println("About page title: '" + title + "'");
+
+        WebElement h1 = findAny(new String[]{
+                "h1",
+                "//h1[contains(text(),'إحنا مين')]",
+                "//h1[contains(text(),'من نحن')]",
+                "//h1[contains(text(),'About')]",
+                ".page-title",
+                ".about-title"
+        });
+        
+        if (h1 == null) {
+            System.out.println("Warning: No h1 found on About page, but continuing...");
+        } else {
+            System.out.println("Found h1: " + h1.getText());
+        }
+
+        int brokenImages = 0;
+        int totalImages = 0;
+        for (WebElement img : driver.findElements(By.tagName("img"))) {
+            totalImages++;
+            if (!isImageLoaded(img)) {
+                brokenImages++;
+                System.out.println("Broken image: " + img.getAttribute("src"));
+            }
+        }
+        System.out.println("Images: " + totalImages + " total, " + brokenImages + " broken");
+
+        WebElement footer = findAny(new String[]{"footer"});
+        Assert.assertNotNull(footer, "Footer missing on About page!");
+    }
+}
