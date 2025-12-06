@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-06T12:45:50 EET" name="Surefire suite" finished-at="2025-12-06T12:45:57 EET" duration-ms="6488">
+  <suite started-at="2025-12-06T13:35:22 EET" name="Surefire suite" finished-at="2025-12-06T13:35:29 EET" duration-ms="6489">
     <groups>
     </groups>
-    <test started-at="2025-12-06T12:45:50 EET" name="Surefire test" finished-at="2025-12-06T12:45:57 EET" duration-ms="6488">
+    <test started-at="2025-12-06T13:35:22 EET" name="Surefire test" finished-at="2025-12-06T13:35:29 EET" duration-ms="6489">
       <class name="HomeAbout_DigitalMindsTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:HomeAbout_DigitalMindsTest@13acb0d1]" started-at="2025-12-06T12:45:50 EET" name="setup" finished-at="2025-12-06T12:45:52 EET" duration-ms="1145" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:HomeAbout_DigitalMindsTest@13acb0d1]" started-at="2025-12-06T13:35:22 EET" name="setup" finished-at="2025-12-06T13:35:23 EET" duration-ms="1159" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testAboutPage()[pri:0, instance:HomeAbout_DigitalMindsTest@13acb0d1]" started-at="2025-12-06T12:45:52 EET" name="testAboutPage" finished-at="2025-12-06T12:45:54 EET" duration-ms="2700" status="PASS">
+        <test-method signature="testAboutPage()[pri:0, instance:HomeAbout_DigitalMindsTest@13acb0d1]" started-at="2025-12-06T13:35:24 EET" name="testAboutPage" finished-at="2025-12-06T13:35:26 EET" duration-ms="2709" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAboutPage -->
-        <test-method signature="testHomePage()[pri:0, instance:HomeAbout_DigitalMindsTest@13acb0d1]" started-at="2025-12-06T12:45:54 EET" name="testHomePage" finished-at="2025-12-06T12:45:57 EET" duration-ms="2486" status="PASS">
+        <test-method signature="testHomePage()[pri:0, instance:HomeAbout_DigitalMindsTest@13acb0d1]" started-at="2025-12-06T13:35:26 EET" name="testHomePage" finished-at="2025-12-06T13:35:29 EET" duration-ms="2467" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testHomePage -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:HomeAbout_DigitalMindsTest@13acb0d1]" started-at="2025-12-06T12:45:57 EET" name="teardown" finished-at="2025-12-06T12:45:57 EET" duration-ms="125" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:HomeAbout_DigitalMindsTest@13acb0d1]" started-at="2025-12-06T13:35:29 EET" name="teardown" finished-at="2025-12-06T13:35:29 EET" duration-ms="121" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
