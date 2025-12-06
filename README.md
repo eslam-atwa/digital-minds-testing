@@ -68,8 +68,8 @@ Tests use:
 ##  Contributors
 
 - [Eslam Atwa](https://github.com/eslam-atwa)
-
-
+- [Dareen Hazem](https://github.com/DareenHazem)
+- [Halima Ehab](https://github.com/halimaehab)
 
 ---
 
